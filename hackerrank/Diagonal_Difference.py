@@ -3,28 +3,21 @@ import math
 
 def get_diag(matrix, natural=True):
     diag = []
-    start = (len(matrix[0]) - 1, 0)[natural]
-    end = (0, len(matrix[0]))[natural]
-    for i in range(start, (-1, end)[natural], (-1, 1)[natural]):
-        diag.append(matrix[i][(len(matrix[0]) - start - 1, i)[natural]])
+    start = ([0, len(matrix[0]) - 1], [0, 0])[natural]
+    end = ([len(matrix), -1], [len(matrix), len(matrix[0])])[natural]
+
+    for i, j in list(zip(range(start[0], end[0]), range(start[1], end[1], (-1, 1)[natural]))): diag.append(matrix[i][j])
     return diag
 
 input()
 matrix = []
 while True:
     try: arr = list(map(int, input().split(' ')))
-    except EOFError:break
-    if arr is not None:
-        matrix.append(arr)
-    else: break
+    except EOFError: break
+    matrix.append(arr)
 
-diag1 = get_diag(matrix)
-diag2 = get_diag(matrix, False)
-sum1 = 0
-sum2 = 0
 
-for i in range(0, len(diag1)):
-    sum1 += diag1[i]
-    sum2 += diag2[i]
+res = 0
+for i, j in list(zip(get_diag(matrix), get_diag(matrix, False))): res += (i - j)
 
-print(math.fabs(sum1 - sum2))
+print(int(math.fabs(res)))
