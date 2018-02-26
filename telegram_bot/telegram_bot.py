@@ -1,7 +1,7 @@
 import requests
 from time import sleep
 
-token = "500575763:AAF45tTrvOl2_oI-aCwaiCcPHgu5JT2sV-4"
+token = ""
 url = "https://api.telegram.org/bot" + token + "/"
 
 
