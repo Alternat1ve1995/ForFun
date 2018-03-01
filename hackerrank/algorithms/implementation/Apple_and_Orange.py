@@ -1,4 +1,5 @@
 class Map:
+
     def __init__(self, s, t, a, b):
         self.__s = s
         self.__t = t
