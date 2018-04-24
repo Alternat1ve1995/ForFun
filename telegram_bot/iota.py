@@ -4,7 +4,7 @@ from time import sleep
 
 token = ''
 url = "https://api.telegram.org/bot" + token + "/"
-ids = [347415690, ]
+ids = []
 
 while True:
     html_text = requests.get('https://prostocoin.com/c/iota').content
