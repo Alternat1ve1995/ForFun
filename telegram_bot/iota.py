@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from time import sleep
 
-token = '531721148:AAExa6LAvTEqWjp_046pov4nFnOd_w680uA'
+token = ''
 url = "https://api.telegram.org/bot" + token + "/"
 ids = [347415690, ]
 
